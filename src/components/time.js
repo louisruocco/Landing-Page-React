@@ -2,17 +2,15 @@ import React, {useState, useEffect} from "react";
 
 function Time(){
 
-    const [clock, setClock] = useState("");
     const [date, setDate] = useState("");
+    const [clock, setClock] = useState("");
 
     useEffect(() => {
-        let time = new Date();
-        let hours = time.getHours();
-        let minutes = time.getMinutes();
-        let day = time.getDay();
-        let timeOfDay = time.getDate();
-        let month = time.getMonth();
-        let year = time.getFullYear();
+        let date = new Date();
+        let day = date.getDay();
+        let timeOfDay = date.getDate();
+        let month = date.getMonth();
+        let year = date.getFullYear();
 
         const days = [
             "Sunday", 
@@ -39,17 +37,12 @@ function Time(){
             "December"
         ]
 
-        setInterval(() => {
-            setClock(hours + ":" + minutes);
-        }, 1000)
-
-        setDate(days[day] + " " + timeOfDay + " " + months[month] + " " + year)
+        setDate(days[day] + " " + timeOfDay + " " + months[month] + " " + year);
     })
 
     return (
-        <div className = "time">
-            <h1 className = "clock">{clock}</h1>
-            <h2 className = "date">{date}</h2>
+        <div className = "date">
+            <h2>{date}</h2>
         </div>
     );
 }

@@ -1,12 +1,14 @@
 import './App.css';
 import Greeting from "./components/greeting";
 import Time from "./components/time";
+import Weather from "./components/weather";
 
 function App() {
   return (
     <div className="App">
       <Time />
       <Greeting />
+      <Weather />
     </div>
   );
 }
