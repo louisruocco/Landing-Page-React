@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 function Weather(){
 
     const [weather, setWeather] = useState("");
+    const [location, setLocation] = useState("");
 
     useEffect(() => {
         let lat;
@@ -18,7 +19,8 @@ function Weather(){
         
                 const { temp } = data.main;
                 const location = data.name  
-                setWeather(`${location}: ${temp}°C`)
+                setWeather(`${temp}°C`);
+                setLocation(location);
             });
         }
     })
@@ -26,7 +28,8 @@ function Weather(){
     return (
         <div className = "weather">
             <h2>Weather:</h2>
-            <h3>{weather}</h3>
+            <h3>{location}</h3>
+            <h4>{weather}</h4>
         </div>
     );
 }

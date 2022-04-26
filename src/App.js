@@ -6,6 +6,7 @@ import Weather from "./components/weather";
 function App() {
   return (
     <div className="App">
+      <div className = "overlay"></div>
       <Time />
       <Greeting />
       <Weather />
